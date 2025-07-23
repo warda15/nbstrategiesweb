@@ -136,6 +136,17 @@
             font-size: 18px;
         }
         
+        .btn-secondary {
+            background: transparent;
+            color: #286700;
+            border: 2px solid #286700;
+        }
+        
+        .btn-secondary:hover {
+            background: #286700;
+            color: white;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
@@ -165,17 +176,6 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 60px;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: #286700;
-            border: 2px solid #286700;
-        }
-        
-        .btn-secondary:hover {
-            background: #286700;
-            color: white;
         }
         
         /* Stats */
@@ -284,6 +284,170 @@
             padding: 6px 0;
             color: #64748b;
             font-size: 15px;
+        }
+        
+        .service-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+        
+        .close:hover { color: #000; }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4C1E0F;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #286700;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* FAQ Styles */
+        .faq-item {
+            background: white;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 24px;
+            background: #f8fafc;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            color: #4C1E0F;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f1f5f9;
+        }
+        
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 24px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #286700, #1d4f00);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 12px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .newsletter-form button {
+            padding: 16px 24px;
+            background: white;
+            color: #286700;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
         }
         
         /* About Section */
@@ -434,6 +598,37 @@
             margin: 0 auto;
         }
         
+        .contact-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 8px;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background: #286700;
+            color: white;
+            border-color: #286700;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
         .contact-card {
             background: white;
             padding: 48px;
@@ -550,10 +745,21 @@
             color: #d1d5db;
         }
         
+        /* Success Messages */
+        .success-message {
+            background: #dcfce7;
+            color: #166534;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
         /* Responsive */
         @media (min-width: 768px) {
             .nav-desktop { display: flex; }
             .about-grid { grid-template-columns: 1fr 1fr; }
+            .newsletter-form { flex-direction: row; }
         }
         
         @media (max-width: 768px) {
@@ -566,6 +772,10 @@
             .about-content h2 { font-size: 32px; }
             .contact-card { padding: 32px 24px; }
             .phone { display: none; }
+            .form-grid { grid-template-columns: 1fr; }
+            .service-buttons { flex-direction: column; }
+            .newsletter-form { flex-direction: column; }
+            .contact-tabs { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -580,6 +790,7 @@
                     <a href="#services">Services</a>
                     <a href="#apropos">À propos</a>
                     <a href="#temoignages">Témoignages</a>
+                    <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
                 </nav>
                 <div class="header-actions">
@@ -637,7 +848,10 @@
                         <li>✅ Plan d'action détaillé</li>
                         <li>✅ Suivi pendant 30 jours</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Commander maintenant</a>
+                    <div class="service-buttons">
+                        <button class="btn btn-primary" onclick="openModal('quoteModal')">Commander</button>
+                        <button class="btn btn-secondary" onclick="openModal('auditModal')">En savoir plus</button>
+                    </div>
                 </div>
 
                 <div class="service-card">
@@ -652,7 +866,10 @@
                         <li>✅ Balises méta optimisées</li>
                         <li>✅ Révisions illimitées 30j</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Commander maintenant</a>
+                    <div class="service-buttons">
+                        <button class="btn btn-primary" onclick="openModal('quoteModal')">Commander</button>
+                        <button class="btn btn-secondary" onclick="openModal('fichesModal')">En savoir plus</button>
+                    </div>
                 </div>
 
                 <div class="service-card">
@@ -667,7 +884,10 @@
                         <li>✅ Mots-clés intégrés</li>
                         <li>✅ Révisions illimitées 30j</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Commander maintenant</a>
+                    <div class="service-buttons">
+                        <button class="btn btn-primary" onclick="openModal('quoteModal')">Commander</button>
+                        <button class="btn btn-secondary" onclick="openModal('redactionModal')">En savoir plus</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -739,6 +959,79 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir sur mes services SEO</p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Combien de temps faut-il pour voir des résultats SEO ?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Les premiers résultats SEO apparaissent généralement entre 3 à 6 mois. Cependant, des améliorations techniques peuvent être visibles plus rapidement. Le SEO est un investissement à long terme qui génère des résultats durables.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Travaillez-vous avec tous types d'entreprises ?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Je me spécialise dans l'e-commerce, la santé & bien-être, les thérapeutes, boutiques en ligne et services professionnels. Mon expertise locale au Québec me permet d'adapter parfaitement mes stratégies à votre marché.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quels outils SEO utilisez-vous ?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>J'utilise des outils professionnels comme SEMrush, Google Analytics, Google Search Console, Screaming Frog et d'autres outils spécialisés pour garantir des analyses précises et des stratégies efficaces.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Proposez-vous un accompagnement après livraison ?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui ! Je propose 30 jours de révisions illimitées et un suivi personnalisé. Je reste disponible pour répondre à vos questions et vous accompagner dans la mise en œuvre des recommandations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Comment se déroule la consultation gratuite ?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Lors de notre appel de 15 minutes, nous analysons rapidement votre situation SEO actuelle, identifions vos principaux défis et je vous propose une stratégie personnalisée. C'est sans engagement et entièrement gratuit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container text-center">
+            <h2 class="text-4xl font-bold mb-4">Restez informé des dernières actualités SEO</h2>
+            <p class="text-xl mb-8">Recevez mes conseils SEO exclusifs et les dernières tendances directement dans votre boîte mail</p>
+            <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'abonner</button>
+            </form>
+            <div id="newsletter-success" class="success-message">Merci ! Vous êtes maintenant abonné à notre newsletter.</div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
@@ -746,23 +1039,165 @@
                 <h2 class="section-title">Réservez votre consultation gratuite</h2>
                 <p class="section-subtitle">Discutons de votre projet SEO (15 minutes offertes)</p>
                 
-                <div class="contact-card">
-                    <div class="contact-grid">
-                        <div class="contact-item">
-                            <h3>📞 Appelez-moi</h3>
-                            <a href="tel:5142416488" class="contact-link">514 241 6488</a>
-                            <p class="contact-info">Lun-Ven 9h-17h</p>
+                <div class="contact-tabs">
+                    <button class="tab-btn active" onclick="switchTab('contact-tab')">Contact Rapide</button>
+                    <button class="tab-btn" onclick="switchTab('quote-tab')">Demande de Devis</button>
+                </div>
+
+                <div id="contact-tab" class="tab-content active">
+                    <div class="contact-card">
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <h3>📞 Appelez-moi</h3>
+                                <a href="tel:5142416488" class="contact-link">514 241 6488</a>
+                                <p class="contact-info">Lun-Ven 9h-17h</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>📧 Écrivez-moi</h3>
+                                <a href="mailto:info@nbstrategiesweb.ca" class="contact-link">info@nbstrategiesweb.ca</a>
+                                <p class="contact-info">Réponse sous 24h</p>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <h3>📧 Écrivez-moi</h3>
-                            <a href="mailto:info@nbstrategiesweb.ca" class="contact-link">info@nbstrategiesweb.ca</a>
-                            <p class="contact-info">Réponse sous 24h</p>
+                        
+                        <div class="consultation-highlight">
+                            <p><strong>💡 Consultation gratuite de 15 minutes</strong></p>
+                            <p>Analysons ensemble votre situation SEO actuelle</p>
                         </div>
+
+                        <form onsubmit="submitContact(event)" style="margin-top: 40px;">
+                            <div id="contact-success" class="success-message">Merci ! Votre message a été envoyé. Je vous contacte sous 24h.</div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nom complet *</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" required>
+                                </div>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Téléphone</label>
+                                    <input type="tel">
+                                </div>
+                                <div class="form-group">
+                                    <label>Service souhaité</label>
+                                    <select>
+                                        <option value="">Sélectionnez un service</option>
+                                        <option value="audit">Audit SEO</option>
+                                        <option value="fiches">Fiches Produits</option>
+                                        <option value="redaction">Rédaction</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea rows="4" placeholder="Décrivez votre projet..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                🎯 Envoyer ma demande
+                            </button>
+                        </form>
                     </div>
-                    
-                    <div class="consultation-highlight">
-                        <p><strong>💡 Consultation gratuite de 15 minutes</strong></p>
-                        <p>Analysons ensemble votre situation SEO actuelle</p>
+                </div>
+
+                <div id="quote-tab" class="tab-content">
+                    <div class="contact-card">
+                        <h3 style="text-align: center; margin-bottom: 30px; color: #4C1E0F;">Demande de Devis Personnalisé</h3>
+                        <form onsubmit="submitQuote(event)">
+                            <div id="quote-success" class="success-message">Merci ! Votre demande de devis a été envoyée. Je vous contacte sous 24h avec une proposition personnalisée.</div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Nom de l'entreprise *</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Secteur d'activité *</label>
+                                    <select required>
+                                        <option value="">Choisissez votre secteur</option>
+                                        <option value="ecommerce">E-commerce</option>
+                                        <option value="sante">Santé & Bien-être</option>
+                                        <option value="therapie">Thérapie</option>
+                                        <option value="boutique">Boutique en ligne</option>
+                                        <option value="service">Service professionnel</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Contact principal *</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email professionnel *</label>
+                                    <input type="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>URL de votre site web</label>
+                                <input type="url" placeholder="https://votre-site.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Services souhaités * (plusieurs choix possibles)</label>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
+                                    <label style="display: flex; align-items: center; font-weight: normal;">
+                                        <input type="checkbox" style="margin-right: 8px; width: auto;">
+                                        Audit SEO complet (297$)
+                                    </label>
+                                    <label style="display: flex; align-items: center; font-weight: normal;">
+                                        <input type="checkbox" style="margin-right: 8px; width: auto;">
+                                        Fiches produits SEO (47$/fiche)
+                                    </label>
+                                    <label style="display: flex; align-items: center; font-weight: normal;">
+                                        <input type="checkbox" style="margin-right: 8px; width: auto;">
+                                        Rédaction de contenu (97$/article)
+                                    </label>
+                                    <label style="display: flex; align-items: center; font-weight: normal;">
+                                        <input type="checkbox" style="margin-right: 8px; width: auto;">
+                                        Accompagnement personnalisé
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Budget approximatif</label>
+                                <select>
+                                    <option value="">Sélectionnez votre budget</option>
+                                    <option value="500">Moins de 500$</option>
+                                    <option value="1000">500$ - 1000$</option>
+                                    <option value="2000">1000$ - 2000$</option>
+                                    <option value="5000">2000$ - 5000$</option>
+                                    <option value="plus">Plus de 5000$</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Décrivez votre projet et vos objectifs *</label>
+                                <textarea rows="5" required placeholder="Ex: Améliorer le référencement de ma boutique Shopify, augmenter le trafic organique de 50%, optimiser 20 fiches produits..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Délais souhaités</label>
+                                <select>
+                                    <option value="">Quand souhaitez-vous commencer ?</option>
+                                    <option value="urgent">Dès que possible</option>
+                                    <option value="semaine">Dans la semaine</option>
+                                    <option value="mois">Dans le mois</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                📋 Demander mon devis gratuit
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -794,12 +1229,152 @@
                         <li>📍 Québec, Canada</li>
                     </ul>
                 </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPolicy('privacy')">Politique de confidentialité</a></li>
+                        <li><a href="#" onclick="showPolicy('terms')">Conditions d'utilisation</a></li>
+                        <li><a href="#" onclick="showPolicy('cookies')">Politique de cookies</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 NB Stratégies Web. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <!-- Service Detail Modals -->
+    <div id="auditModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #4C1E0F; margin-bottom: 20px;">🔍 Audit SEO Complet</h2>
+            <p><strong>Un diagnostic complet de votre site pour maximiser votre visibilité</strong></p>
+            
+            <h3 style="color: #286700; margin: 20px 0 10px;">Ce que comprend l'audit :</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Analyse technique :</strong> Vitesse, indexation, crawl</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Audit de contenu :</strong> Optimisation des pages existantes</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Recherche de mots-clés :</strong> Identification des opportunités</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Analyse de la concurrence :</strong> Benchmark de votre secteur</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Plan d'action priorisé :</strong> Feuille de route détaillée</li>
+                <li style="padding: 8px 0;">✅ <strong>Suivi 30 jours :</strong> Accompagnement personnalisé</li>
+            </ul>
+            
+            <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Délais :</strong> 5-7 jours ouvrables</p>
+                <p><strong>Livrables :</strong> Rapport détaillé PDF + Appel de restitution</p>
+                <p><strong>Prix :</strong> À partir de 297$ (varie selon la taille du site)</p>
+            </div>
+            
+            <button class="btn btn-primary btn-lg" onclick="closeModal('auditModal'); openModal('quoteModal');" style="width: 100%;">
+                Commander maintenant
+            </button>
+        </div>
+    </div>
+
+    <div id="fichesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #4C1E0F; margin-bottom: 20px;">📝 Fiches Produits SEO</h2>
+            <p><strong>Optimisation complète de vos fiches produits pour augmenter vos ventes</strong></p>
+            
+            <h3 style="color: #286700; margin: 20px 0 10px;">Pour chaque fiche produit :</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Recherche de mots-clés :</strong> Ciblage précis de votre audience</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Titre optimisé :</strong> Balise H1 et title SEO</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Description produit :</strong> Contenu SEO et conversion</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Balises méta :</strong> Meta description et alt images</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Structure données :</strong> Schema markup produit</li>
+                <li style="padding: 8px 0;">✅ <strong>Révisions illimitées :</strong> Pendant 30 jours</li>
+            </ul>
+            
+            <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Délais :</strong> 2-3 jours par fiche</p>
+                <p><strong>Plateformes :</strong> Shopify, WooCommerce, Magento, autres</p>
+                <p><strong>Prix :</strong> 47$ par fiche (dégressif à partir de 10 fiches)</p>
+            </div>
+            
+            <button class="btn btn-primary btn-lg" onclick="closeModal('fichesModal'); openModal('quoteModal');" style="width: 100%;">
+                Commander maintenant
+            </button>
+        </div>
+    </div>
+
+    <div id="redactionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #4C1E0F; margin-bottom: 20px;">✍️ Rédaction de Contenu SEO</h2>
+            <p><strong>Articles de blog et contenu web qui attirent et convertissent</strong></p>
+            
+            <h3 style="color: #286700; margin: 20px 0 10px;">Chaque article comprend :</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Recherche approfondie :</strong> Sources fiables et expertise</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Optimisation SEO :</strong> Mots-clés naturellement intégrés</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Structure H1-H6 :</strong> Hiérarchie parfaite pour Google</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Meta description :</strong> Optimisée pour le CTR</li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✅ <strong>Appels à l'action :</strong> Conversion optimisée</li>
+                <li style="padding: 8px 0;">✅ <strong>Révisions illimitées :</strong> Jusqu'à satisfaction complète</li>
+            </ul>
+            
+            <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Longueur :</strong> 800-2000 mots selon le sujet</p>
+                <p><strong>Délais :</strong> 3-5 jours par article</p>
+                <p><strong>Prix :</strong> À partir de 97$ (varie selon la complexité)</p>
+            </div>
+            
+            <button class="btn btn-primary btn-lg" onclick="closeModal('redactionModal'); openModal('quoteModal');" style="width: 100%;">
+                Commander maintenant
+            </button>
+        </div>
+    </div>
+
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #4C1E0F; margin-bottom: 20px;">📋 Demande de Devis</h2>
+            <form onsubmit="submitQuoteModal(event)">
+                <div id="quote-modal-success" class="success-message">Merci ! Votre demande a été envoyée. Je vous contacte sous 24h.</div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nom complet *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Service souhaité *</label>
+                    <select required>
+                        <option value="">Choisissez un service</option>
+                        <option value="audit">Audit SEO Complet (297$)</option>
+                        <option value="fiches">Fiches Produits SEO (47$/fiche)</option>
+                        <option value="redaction">Rédaction de Contenu (97$/article)</option>
+                        <option value="multiple">Plusieurs services</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>URL de votre site</label>
+                    <input type="url" placeholder="https://votre-site.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>Décrivez votre projet *</label>
+                    <textarea rows="4" required placeholder="Détaillez vos besoins et objectifs..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling
@@ -827,8 +1402,128 @@
                 header.style.backdropFilter = 'none';
             }
         });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal with X button
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.onclick = function() {
+                this.closest('.modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('span');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('span').textContent = '+';
+                    }
+                });
+                
+                // Toggle current FAQ item
+                answer.classList.toggle('active');
+                icon.textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // Tab functionality
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Form submissions
+        function submitContact(event) {
+            event.preventDefault();
+            document.getElementById('contact-success').style.display = 'block';
+            event.target.reset();
+            setTimeout(() => {
+                document.getElementById('contact-success').style.display = 'none';
+            }, 5000);
+        }
+
+        function submitQuote(event) {
+            event.preventDefault();
+            document.getElementById('quote-success').style.display = 'block';
+            event.target.reset();
+            setTimeout(() => {
+                document.getElementById('quote-success').style.display = 'none';
+            }, 5000);
+        }
+
+        function submitQuoteModal(event) {
+            event.preventDefault();
+            document.getElementById('quote-modal-success').style.display = 'block';
+            event.target.reset();
+            setTimeout(() => {
+                closeModal('quoteModal');
+                document.getElementById('quote-modal-success').style.display = 'none';
+            }, 3000);
+        }
+
+        function submitNewsletter(event) {
+            event.preventDefault();
+            document.getElementById('newsletter-success').style.display = 'block';
+            event.target.reset();
+            setTimeout(() => {
+                document.getElementById('newsletter-success').style.display = 'none';
+            }, 5000);
+        }
+
+        function showPolicy(type) {
+            let content = '';
+            switch(type) {
+                case 'privacy':
+                    content = 'Politique de confidentialité de NB Stratégies Web...';
+                    break;
+                case 'terms':
+                    content = 'Conditions d\'utilisation de NB Stratégies Web...';
+                    break;
+                case 'cookies':
+                    content = 'Politique de cookies de NB Stratégies Web...';
+                    break;
+            }
+            alert(content);
+        }
     </script>
 </body>
 </html>
-```
+
 
