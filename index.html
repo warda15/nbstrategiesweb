@@ -4,145 +4,703 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NB Stratégies Web - Consultante SEO Québec</title>
+    <meta name="description" content="Consultante SEO au Québec spécialisée en audit SEO, fiches produits optimisées et rédaction de contenu pour améliorer votre référencement.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .bg-primary { background-color: #286700; } .text-primary { color: #286700; }
-        .bg-accent { background-color: #4C1E0F; } .text-accent { color: #4C1E0F; }
-        .bg-gray-50 { background-color: #f9fafb; } .text-gray-600 { color: #6b7280; }
-        .rounded-lg { border-radius: 8px; } .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .py-4 { padding: 20px 0; } .py-20 { padding: 80px 0; } .px-4 { padding: 0 16px; } .px-8 { padding: 0 32px; }
-        .mb-4 { margin-bottom: 16px; } .mb-6 { margin-bottom: 24px; } .mb-8 { margin-bottom: 32px; }
-        .text-center { text-align: center; } .font-bold { font-weight: 700; } .font-semibold { font-weight: 600; }
-        .text-xl { font-size: 1.25rem; } .text-2xl { font-size: 1.5rem; } .text-4xl { font-size: 2.25rem; } .text-5xl { font-size: 3rem; }
-        .grid { display: grid; } .grid-cols-3 { grid-template-columns: repeat(3, 1fr); } .gap-8 { gap: 32px; }
-        .flex { display: flex; } .items-center { align-items: center; } .justify-center { justify-content: center; } .space-x-4 > * + * { margin-left: 16px; }
-        .hidden { display: none; } @media (min-width: 768px) { .md\\:flex { display: flex; } .md\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); } }
-        header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-        nav a { color: #6b7280; text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            scroll-behavior: smooth;
+        }
+        
+        /* Colors */
+        .bg-primary { background-color: #286700; }
+        .text-primary { color: #286700; }
+        .bg-secondary { background-color: #C39397; }
+        .text-secondary { color: #C39397; }
+        .bg-accent { background-color: #4C1E0F; }
+        .text-accent { color: #4C1E0F; }
+        .bg-gray-50 { background-color: #f8fafc; }
+        .bg-gray-100 { background-color: #f1f5f9; }
+        .text-gray-600 { color: #64748b; }
+        .text-gray-700 { color: #475569; }
+        .text-white { color: white; }
+        
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .hidden { display: none; }
+        
+        /* Spacing */
+        .py-4 { padding: 16px 0; }
+        .py-12 { padding: 48px 0; }
+        .py-20 { padding: 80px 0; }
+        .px-4 { padding: 0 16px; }
+        .px-6 { padding: 0 24px; }
+        .px-8 { padding: 0 32px; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-6 { margin-bottom: 24px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-12 { margin-top: 48px; }
+        
+        /* Typography */
+        .text-sm { font-size: 14px; }
+        .text-lg { font-size: 18px; }
+        .text-xl { font-size: 20px; }
+        .text-2xl { font-size: 24px; }
+        .text-3xl { font-size: 30px; }
+        .text-4xl { font-size: 36px; }
+        .text-5xl { font-size: 48px; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        
+        /* Components */
+        .rounded-lg { border-radius: 12px; }
+        .rounded-xl { border-radius: 16px; }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo { font-size: 28px; font-weight: 700; color: #286700; }
+        
+        nav { display: none; }
+        nav a { 
+            color: #64748b; 
+            text-decoration: none; 
+            margin: 0 20px; 
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
         nav a:hover { color: #286700; }
-        .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
-        .btn-primary { background: #286700; color: white; } .btn-primary:hover { background: #1e4f00; }
-        .hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
-        .service-card { background: #f9fafb; padding: 32px; border-radius: 12px; text-align: center; transition: transform 0.3s; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .service-icon { font-size: 3rem; margin-bottom: 16px; }
-        .price { font-size: 1.5rem; font-weight: 700; color: #286700; margin: 16px 0; }
-        .feature-list { list-style: none; text-align: left; margin: 16px 0; }
-        .feature-list li { padding: 4px 0; color: #6b7280; }
-        .about-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
-        @media (min-width: 1024px) { .about-grid { grid-template-columns: 1fr 1fr; } }
-        .profile-card { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
-        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-        @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
-        .contact-card { text-align: center; }
-        .contact-link { color: #286700; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
-        .contact-link:hover { color: #1e4f00; }
-        footer { background: #4C1E0F; color: white; }
-        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-        .footer-section h4 { font-weight: 600; margin-bottom: 16px; }
-        .footer-section ul { list-style: none; }
-        .footer-section li { padding: 4px 0; color: #d1d5db; }
-        .scroll-smooth { scroll-behavior: smooth; }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .phone { color: #286700; font-weight: 600; font-size: 16px; }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #286700;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4f00;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(40, 103, 0, 0.3);
+        }
+        
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: #4C1E0F;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            color: #475569;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #286700;
+            border: 2px solid #286700;
+        }
+        
+        .btn-secondary:hover {
+            background: #286700;
+            color: white;
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #286700;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 16px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #4C1E0F;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #4C1E0F;
+            margin-bottom: 16px;
+        }
+        
+        .service-description {
+            color: #64748b;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .service-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #286700;
+            margin-bottom: 24px;
+        }
+        
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        
+        .service-features li {
+            padding: 6px 0;
+            color: #64748b;
+            font-size: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 44px;
+            font-weight: 700;
+            color: #4C1E0F;
+            margin-bottom: 24px;
+        }
+        
+        .about-content p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        
+        .specialties {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .specialties h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #286700;
+            margin-bottom: 20px;
+        }
+        
+        .specialties-list {
+            list-style: none;
+        }
+        
+        .specialties-list li {
+            padding: 8px 0;
+            color: #475569;
+            font-size: 16px;
+        }
+        
+        .profile-card {
+            background: white;
+            padding: 48px 32px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-avatar {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4C1E0F;
+            margin-bottom: 8px;
+        }
+        
+        .profile-title {
+            color: #286700;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        
+        .profile-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: #286700;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .testimonial-card {
+            background: #f8fafc;
+            padding: 32px;
+            border-radius: 16px;
+            border-left: 4px solid #286700;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .testimonial-text {
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #4C1E0F;
+        }
+        
+        .testimonial-role {
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4C1E0F;
+            margin-bottom: 16px;
+        }
+        
+        .contact-link {
+            color: #286700;
+            font-weight: 700;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: #1d4f00;
+        }
+        
+        .contact-info {
+            color: #64748b;
+            margin-top: 8px;
+        }
+        
+        .consultation-highlight {
+            text-align: center;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid #286700;
+        }
+        
+        .consultation-highlight p {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        .consultation-highlight strong {
+            color: #286700;
+        }
+        
+        /* Footer */
+        footer {
+            background: #4C1E0F;
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .footer-section p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            padding: 4px 0;
+            color: #d1d5db;
+        }
+        
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #6b7280;
+            padding-top: 32px;
+            text-align: center;
+            color: #d1d5db;
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-desktop { display: flex; }
+            .about-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .stats { grid-template-columns: 1fr; gap: 20px; }
+            .section-title { font-size: 32px; }
+            .service-card { padding: 24px; }
+            .about-content h2 { font-size: 32px; }
+            .contact-card { padding: 32px 24px; }
+            .phone { display: none; }
+        }
     </style>
 </head>
-<body class="scroll-smooth">
+<body>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <h1 class="text-2xl font-bold text-primary">NB Stratégies Web</h1>
-                <nav class="hidden md:flex">
+                <div class="logo">NB Stratégies Web</div>
+                <nav class="nav-desktop">
                     <a href="#accueil">Accueil</a>
                     <a href="#services">Services</a>
                     <a href="#apropos">À propos</a>
+                    <a href="#temoignages">Témoignages</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <div class="flex items-center space-x-4">
-                    <span class="text-primary font-semibold">📞 514 241 6488</span>
+                <div class="header-actions">
+                    <span class="phone">📞 514 241 6488</span>
                     <a href="#contact" class="btn btn-primary">Consultation Gratuite</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="accueil" class="hero py-20">
-        <div class="container text-center">
-            <h1 class="text-5xl font-bold text-accent mb-6">Boostez votre référencement avec une experte SEO</h1>
-            <p class="text-xl text-gray-600 mb-8">Consultante SEO au Québec, je vous aide à améliorer votre visibilité en ligne avec des stratégies sur mesure.</p>
-            <a href="#contact" class="btn btn-primary text-xl">🎯 Réserve ta consultation gratuite (15 min)</a>
-        </div>
-    </section>
-
-    <section id="services" class="py-20">
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
         <div class="container">
-            <h2 class="text-4xl font-bold text-accent text-center mb-8">Mes Services SEO</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3 class="text-2xl font-bold text-accent mb-4">Audit SEO Complet</h3>
-                    <p class="text-gray-600 mb-4">Analyse technique approfondie pour identifier les opportunités d'amélioration.</p>
-                    <div class="price">À partir de 297$</div>
-                    <ul class="feature-list">
-                        <li>✅ Analyse technique complète</li>
-                        <li>✅ Audit de contenu</li>
-                        <li>✅ Analyse concurrence</li>
-                        <li>✅ Plan d'action détaillé</li>
-                    </ul>
+            <div class="text-center">
+                <h1>Boostez votre référencement avec une experte SEO</h1>
+                <p>Consultante SEO au Québec, je vous aide à améliorer votre visibilité en ligne avec des stratégies sur mesure. Audit, optimisation et rédaction de contenu pour des résultats durables.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-lg">🎯 Réserve ta consultation gratuite (15 min)</a>
+                    <a href="#services" class="btn btn-secondary btn-lg">Découvrir mes services</a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3 class="text-2xl font-bold text-accent mb-4">Fiches Produits SEO</h3>
-                    <p class="text-gray-600 mb-4">Optimisation de vos fiches produits pour augmenter vos ventes.</p>
-                    <div class="price">À partir de 47$/fiche</div>
-                    <ul class="feature-list">
-                        <li>✅ Recherche mots-clés</li>
-                        <li>✅ Titres optimisés</li>
-                        <li>✅ Descriptions SEO</li>
-                        <li>✅ Révisions illimitées 30j</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✍️</div>
-                    <h3 class="text-2xl font-bold text-accent mb-4">Rédaction de Contenu</h3>
-                    <p class="text-gray-600 mb-4">Articles de blog et contenu web optimisés SEO.</p>
-                    <div class="price">À partir de 97$/article</div>
-                    <ul class="feature-list">
-                        <li>✅ Recherche approfondie</li>
-                        <li>✅ Contenu SEO optimisé</li>
-                        <li>✅ Structure H1-H6</li>
-                        <li>✅ Révisions illimitées 30j</li>
-                    </ul>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Années d'expérience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Clients satisfaits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Amélioration SEO</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="apropos" class="py-20 bg-gray-50">
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Mes Services SEO</h2>
+            <p class="section-subtitle">Des solutions SEO complètes pour booster votre visibilité en ligne</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🔍</span>
+                    <h3 class="service-title">Audit SEO Complet</h3>
+                    <p class="service-description">Analyse technique approfondie de votre site pour identifier les problèmes et opportunités d'amélioration SEO.</p>
+                    <div class="service-price">À partir de 297$</div>
+                    <ul class="service-features">
+                        <li>✅ Analyse technique complète</li>
+                        <li>✅ Audit de contenu</li>
+                        <li>✅ Analyse de la concurrence</li>
+                        <li>✅ Plan d'action détaillé</li>
+                        <li>✅ Suivi pendant 30 jours</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Commander maintenant</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📝</span>
+                    <h3 class="service-title">Fiches Produits SEO</h3>
+                    <p class="service-description">Optimisation de vos fiches produits pour améliorer leur référencement et augmenter vos ventes en ligne.</p>
+                    <div class="service-price">À partir de 47$/fiche</div>
+                    <ul class="service-features">
+                        <li>✅ Recherche de mots-clés</li>
+                        <li>✅ Optimisation des titres</li>
+                        <li>✅ Descriptions SEO</li>
+                        <li>✅ Balises méta optimisées</li>
+                        <li>✅ Révisions illimitées 30j</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Commander maintenant</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">✍️</span>
+                    <h3 class="service-title">Rédaction de Contenu</h3>
+                    <p class="service-description">Articles de blog et contenu web optimisés SEO pour attirer et convertir votre audience cible.</p>
+                    <div class="service-price">À partir de 97$/article</div>
+                    <ul class="service-features">
+                        <li>✅ Recherche approfondie</li>
+                        <li>✅ Contenu SEO optimisé</li>
+                        <li>✅ Structure H1-H6</li>
+                        <li>✅ Mots-clés intégrés</li>
+                        <li>✅ Révisions illimitées 30j</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Commander maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="apropos" class="about">
         <div class="container">
             <div class="about-grid">
-                <div>
-                    <h2 class="text-4xl font-bold text-accent mb-6">À propos de moi</h2>
-                    <p class="text-xl text-gray-600 mb-6">Consultante SEO passionnée basée au Québec, j'accompagne les entreprises dans leur stratégie de référencement naturel depuis plus de 3 ans.</p>
-                    <p class="text-gray-600 mb-6">Mon approche humaine et locale me permet de comprendre parfaitement les enjeux du marché québécois.</p>
-                    <div style="background: white; padding: 24px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <h3 class="text-xl font-bold text-primary mb-4">Mes spécialités :</h3>
-                        <ul style="list-style: none;">
-                            <li style="padding: 4px 0;">🛒 <strong>E-commerce</strong> (Shopify, WooCommerce)</li>
-                            <li style="padding: 4px 0;">🏥 <strong>Santé & Bien-être</strong></li>
-                            <li style="padding: 4px 0;">💆 <strong>Thérapeutes</strong></li>
-                            <li style="padding: 4px 0;">🛍️ <strong>Boutiques en ligne</strong></li>
-                            <li style="padding: 4px 0;">💼 <strong>Services professionnels</strong></li>
+                <div class="about-content">
+                    <h2>À propos de moi</h2>
+                    <p>Consultante SEO passionnée basée au Québec, j'accompagne les entreprises dans leur stratégie de référencement naturel depuis plus de 3 ans.</p>
+                    <p>Mon approche humaine et locale me permet de comprendre parfaitement les enjeux du marché québécois et de proposer des solutions SEO adaptées à votre secteur d'activité.</p>
+                    <div class="specialties">
+                        <h3>Mes spécialités :</h3>
+                        <ul class="specialties-list">
+                            <li>🛒 <strong>E-commerce</strong> (Shopify, WooCommerce)</li>
+                            <li>🏥 <strong>Santé & Bien-être</strong></li>
+                            <li>💆 <strong>Thérapeutes</strong></li>
+                            <li>🛍️ <strong>Boutiques en ligne</strong></li>
+                            <li>💼 <strong>Services professionnels</strong></li>
                         </ul>
                     </div>
                 </div>
                 <div class="text-center">
                     <div class="profile-card">
-                        <div style="font-size: 4rem; margin-bottom: 16px;">👩‍💼</div>
-                        <h3 class="text-2xl font-bold text-accent mb-4">Nathalie Bérubé</h3>
-                        <p class="text-primary font-semibold mb-6">Consultante SEO Certifiée</p>
+                        <div class="profile-avatar">👩‍💼</div>
+                        <h3 class="profile-name">Nathalie Bérubé</h3>
+                        <p class="profile-title">Consultante SEO Certifiée</p>
+                        <div class="profile-badges">
+                            <span class="badge">Google Analytics</span>
+                            <span class="badge">SEMrush</span>
+                        </div>
                         <a href="#contact" class="btn btn-primary">Travaillons ensemble</a>
                     </div>
                 </div>
@@ -150,39 +708,74 @@
         </div>
     </section>
 
-    <section id="contact" class="py-20">
+    <!-- Testimonials -->
+    <section id="temoignages" class="testimonials">
         <div class="container">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl font-bold text-accent mb-4">Réservez votre consultation gratuite</h2>
-                <p class="text-xl text-gray-600">Discutons de votre projet SEO (15 minutes offertes)</p>
-            </div>
-            <div style="background: #f9fafb; padding: 32px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h3 class="text-xl font-bold text-accent mb-4">📞 Appelez-moi</h3>
-                        <a href="tel:5142416488" class="contact-link">514 241 6488</a>
-                        <p class="text-gray-600" style="margin-top: 8px;">Lun-Ven 9h-17h</p>
-                    </div>
-                    <div class="contact-card">
-                        <h3 class="text-xl font-bold text-accent mb-4">📧 Écrivez-moi</h3>
-                        <a href="mailto:info@nbstrategiesweb.ca" class="contact-link">info@nbstrategiesweb.ca</a>
-                        <p class="text-gray-600" style="margin-top: 8px;">Réponse sous 24h</p>
-                    </div>
+            <h2 class="section-title">Ce que disent mes clients</h2>
+            <p class="section-subtitle">Des résultats concrets qui parlent d'eux-mêmes</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Grâce à Nathalie, notre boutique en ligne a vu son trafic organique augmenter de 150% en 6 mois. Son expertise SEO est remarquable !"</p>
+                    <div class="testimonial-author">Marie Dubois</div>
+                    <div class="testimonial-role">Propriétaire, Boutique Mode Québec</div>
                 </div>
-                <div class="text-center" style="margin-top: 32px;">
-                    <p style="font-size: 1.125rem; margin-bottom: 16px;">💡 <strong>Consultation gratuite de 15 minutes</strong></p>
-                    <p class="text-gray-600">Analysons ensemble votre situation SEO actuelle</p>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Approche professionnelle et résultats au rendez-vous. Nos fiches produits sont maintenant parfaitement optimisées !"</p>
+                    <div class="testimonial-author">Jean Tremblay</div>
+                    <div class="testimonial-role">Directeur, Entreprise Tremblay Inc.</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Service personnalisé et accompagnement de qualité. Je recommande vivement NB Stratégies Web !"</p>
+                    <div class="testimonial-author">Sophie Martin</div>
+                    <div class="testimonial-role">Thérapeute, Clinique Bien-être</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <h2 class="section-title">Réservez votre consultation gratuite</h2>
+                <p class="section-subtitle">Discutons de votre projet SEO (15 minutes offertes)</p>
+                
+                <div class="contact-card">
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <h3>📞 Appelez-moi</h3>
+                            <a href="tel:5142416488" class="contact-link">514 241 6488</a>
+                            <p class="contact-info">Lun-Ven 9h-17h</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📧 Écrivez-moi</h3>
+                            <a href="mailto:info@nbstrategiesweb.ca" class="contact-link">info@nbstrategiesweb.ca</a>
+                            <p class="contact-info">Réponse sous 24h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="consultation-highlight">
+                        <p><strong>💡 Consultation gratuite de 15 minutes</strong></p>
+                        <p>Analysons ensemble votre situation SEO actuelle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container py-20">
+        <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3 class="text-xl font-bold mb-4">NB Stratégies Web</h3>
-                    <p style="color: #d1d5db;">Consultante SEO au Québec spécialisée en référencement naturel.</p>
+                    <h3>NB Stratégies Web</h3>
+                    <p>Consultante SEO au Québec spécialisée en référencement naturel et optimisation web.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
@@ -190,6 +783,7 @@
                         <li>Audit SEO</li>
                         <li>Fiches Produits</li>
                         <li>Rédaction de Contenu</li>
+                        <li>Consultation</li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -201,19 +795,40 @@
                     </ul>
                 </div>
             </div>
-            <div style="border-top: 1px solid #6b7280; margin-top: 32px; padding-top: 32px; text-center; color: #d1d5db;">
+            <div class="footer-bottom">
                 <p>&copy; 2025 NB Stratégies Web. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
         });
     </script>
 </body>
 </html>
+```
+
