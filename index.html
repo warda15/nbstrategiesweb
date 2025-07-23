@@ -4,78 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NB Stratégies Web - Consultante SEO Québec</title>
-    <meta name="description" content="Consultante SEO au Québec. Audit SEO, fiches produits optimisées et rédaction de contenu pour améliorer votre référencement.">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        .bg-primary { background-color: #286700; }
-        .text-primary { color: #286700; }
-        .bg-accent { background-color: #4C1E0F; }
-        .text-accent { color: #4C1E0F; }
-        .hover-primary:hover { background-color: #1e4f00; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .bg-primary { background-color: #286700; } .text-primary { color: #286700; }
+        .bg-accent { background-color: #4C1E0F; } .text-accent { color: #4C1E0F; }
+        .bg-gray-50 { background-color: #f9fafb; } .text-gray-600 { color: #6b7280; }
+        .rounded-lg { border-radius: 8px; } .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .py-4 { padding: 20px 0; } .py-20 { padding: 80px 0; } .px-4 { padding: 0 16px; } .px-8 { padding: 0 32px; }
+        .mb-4 { margin-bottom: 16px; } .mb-6 { margin-bottom: 24px; } .mb-8 { margin-bottom: 32px; }
+        .text-center { text-align: center; } .font-bold { font-weight: 700; } .font-semibold { font-weight: 600; }
+        .text-xl { font-size: 1.25rem; } .text-2xl { font-size: 1.5rem; } .text-4xl { font-size: 2.25rem; } .text-5xl { font-size: 3rem; }
+        .grid { display: grid; } .grid-cols-3 { grid-template-columns: repeat(3, 1fr); } .gap-8 { gap: 32px; }
+        .flex { display: flex; } .items-center { align-items: center; } .justify-center { justify-content: center; } .space-x-4 > * + * { margin-left: 16px; }
+        .hidden { display: none; } @media (min-width: 768px) { .md\\:flex { display: flex; } .md\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); } }
+        header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        nav a { color: #6b7280; text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+        nav a:hover { color: #286700; }
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary { background: #286700; color: white; } .btn-primary:hover { background: #1e4f00; }
+        .hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
+        .service-card { background: #f9fafb; padding: 32px; border-radius: 12px; text-align: center; transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .service-icon { font-size: 3rem; margin-bottom: 16px; }
+        .price { font-size: 1.5rem; font-weight: 700; color: #286700; margin: 16px 0; }
+        .feature-list { list-style: none; text-align: left; margin: 16px 0; }
+        .feature-list li { padding: 4px 0; color: #6b7280; }
+        .about-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+        @media (min-width: 1024px) { .about-grid { grid-template-columns: 1fr 1fr; } }
+        .profile-card { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+        .contact-card { text-align: center; }
+        .contact-link { color: #286700; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
+        .contact-link:hover { color: #1e4f00; }
+        footer { background: #4C1E0F; color: white; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+        .footer-section h4 { font-weight: 600; margin-bottom: 16px; }
+        .footer-section ul { list-style: none; }
+        .footer-section li { padding: 4px 0; color: #d1d5db; }
+        .scroll-smooth { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-white font-sans">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-primary">NB Stratégies Web</h1>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#accueil" class="text-gray-700 hover:text-primary">Accueil</a>
-                <a href="#services" class="text-gray-700 hover:text-primary">Services</a>
-                <a href="#apropos" class="text-gray-700 hover:text-primary">À propos</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <span class="text-primary font-semibold">📞 514 241 6488</span>
-                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg hover-primary">Consultation Gratuite</a>
+<body class="scroll-smooth">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="text-2xl font-bold text-primary">NB Stratégies Web</h1>
+                <nav class="hidden md:flex">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#services">Services</a>
+                    <a href="#apropos">À propos</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <span class="text-primary font-semibold">📞 514 241 6488</span>
+                    <a href="#contact" class="btn btn-primary">Consultation Gratuite</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section id="accueil" class="bg-gradient-to-br from-green-50 to-green-100 py-20">
-        <div class="max-w-6xl mx-auto px-4 text-center">
+    <section id="accueil" class="hero py-20">
+        <div class="container text-center">
             <h1 class="text-5xl font-bold text-accent mb-6">Boostez votre référencement avec une experte SEO</h1>
-            <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">Consultante SEO au Québec, je vous aide à améliorer votre visibilité en ligne avec des stratégies sur mesure.</p>
-            <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover-primary inline-block">🎯 Réserve ta consultation gratuite (15 min)</a>
+            <p class="text-xl text-gray-600 mb-8">Consultante SEO au Québec, je vous aide à améliorer votre visibilité en ligne avec des stratégies sur mesure.</p>
+            <a href="#contact" class="btn btn-primary text-xl">🎯 Réserve ta consultation gratuite (15 min)</a>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-accent text-center mb-16">Mes Services SEO</h2>
+    <section id="services" class="py-20">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-accent text-center mb-8">Mes Services SEO</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-xl p-8 text-center">
-                    <div class="text-4xl mb-4">🔍</div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
                     <h3 class="text-2xl font-bold text-accent mb-4">Audit SEO Complet</h3>
-                    <p class="text-gray-600 mb-6">Analyse technique approfondie pour identifier les opportunités d'amélioration.</p>
-                    <div class="text-2xl font-bold text-primary mb-4">À partir de 297$</div>
-                    <ul class="text-sm text-gray-600 mb-6 space-y-2 text-left">
+                    <p class="text-gray-600 mb-4">Analyse technique approfondie pour identifier les opportunités d'amélioration.</p>
+                    <div class="price">À partir de 297$</div>
+                    <ul class="feature-list">
                         <li>✅ Analyse technique complète</li>
                         <li>✅ Audit de contenu</li>
                         <li>✅ Analyse concurrence</li>
                         <li>✅ Plan d'action détaillé</li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 rounded-xl p-8 text-center">
-                    <div class="text-4xl mb-4">📝</div>
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
                     <h3 class="text-2xl font-bold text-accent mb-4">Fiches Produits SEO</h3>
-                    <p class="text-gray-600 mb-6">Optimisation de vos fiches produits pour augmenter vos ventes.</p>
-                    <div class="text-2xl font-bold text-primary mb-4">À partir de 47$/fiche</div>
-                    <ul class="text-sm text-gray-600 mb-6 space-y-2 text-left">
+                    <p class="text-gray-600 mb-4">Optimisation de vos fiches produits pour augmenter vos ventes.</p>
+                    <div class="price">À partir de 47$/fiche</div>
+                    <ul class="feature-list">
                         <li>✅ Recherche mots-clés</li>
                         <li>✅ Titres optimisés</li>
                         <li>✅ Descriptions SEO</li>
                         <li>✅ Révisions illimitées 30j</li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 rounded-xl p-8 text-center">
-                    <div class="text-4xl mb-4">✍️</div>
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
                     <h3 class="text-2xl font-bold text-accent mb-4">Rédaction de Contenu</h3>
-                    <p class="text-gray-600 mb-6">Articles de blog et contenu web optimisés SEO.</p>
-                    <div class="text-2xl font-bold text-primary mb-4">À partir de 97$/article</div>
-                    <ul class="text-sm text-gray-600 mb-6 space-y-2 text-left">
+                    <p class="text-gray-600 mb-4">Articles de blog et contenu web optimisés SEO.</p>
+                    <div class="price">À partir de 97$/article</div>
+                    <ul class="feature-list">
                         <li>✅ Recherche approfondie</li>
                         <li>✅ Contenu SEO optimisé</li>
                         <li>✅ Structure H1-H6</li>
@@ -86,91 +120,88 @@
         </div>
     </section>
 
-    <!-- À propos -->
     <section id="apropos" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="container">
+            <div class="about-grid">
                 <div>
                     <h2 class="text-4xl font-bold text-accent mb-6">À propos de moi</h2>
-                    <p class="text-lg text-gray-700 mb-6">Consultante SEO passionnée basée au Québec, j'accompagne les entreprises dans leur stratégie de référencement naturel depuis plus de 3 ans.</p>
-                    <p class="text-gray-700 mb-6">Mon approche humaine et locale me permet de comprendre parfaitement les enjeux du marché québécois.</p>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-xl text-gray-600 mb-6">Consultante SEO passionnée basée au Québec, j'accompagne les entreprises dans leur stratégie de référencement naturel depuis plus de 3 ans.</p>
+                    <p class="text-gray-600 mb-6">Mon approche humaine et locale me permet de comprendre parfaitement les enjeux du marché québécois.</p>
+                    <div style="background: white; padding: 24px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                         <h3 class="text-xl font-bold text-primary mb-4">Mes spécialités :</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>🛒 <strong>E-commerce</strong> (Shopify, WooCommerce)</li>
-                            <li>🏥 <strong>Santé & Bien-être</strong></li>
-                            <li>💆 <strong>Thérapeutes</strong></li>
-                            <li>🛍️ <strong>Boutiques en ligne</strong></li>
-                            <li>💼 <strong>Services professionnels</strong></li>
+                        <ul style="list-style: none;">
+                            <li style="padding: 4px 0;">🛒 <strong>E-commerce</strong> (Shopify, WooCommerce)</li>
+                            <li style="padding: 4px 0;">🏥 <strong>Santé & Bien-être</strong></li>
+                            <li style="padding: 4px 0;">💆 <strong>Thérapeutes</strong></li>
+                            <li style="padding: 4px 0;">🛍️ <strong>Boutiques en ligne</strong></li>
+                            <li style="padding: 4px 0;">💼 <strong>Services professionnels</strong></li>
                         </ul>
                     </div>
                 </div>
                 <div class="text-center">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <div class="text-6xl mb-4">👩‍💼</div>
+                    <div class="profile-card">
+                        <div style="font-size: 4rem; margin-bottom: 16px;">👩‍💼</div>
                         <h3 class="text-2xl font-bold text-accent mb-4">Nathalie Bérubé</h3>
                         <p class="text-primary font-semibold mb-6">Consultante SEO Certifiée</p>
-                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover-primary">Travaillons ensemble</a>
+                        <a href="#contact" class="btn btn-primary">Travaillons ensemble</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
+    <section id="contact" class="py-20">
+        <div class="container">
+            <div class="text-center mb-8">
                 <h2 class="text-4xl font-bold text-accent mb-4">Réservez votre consultation gratuite</h2>
                 <p class="text-xl text-gray-600">Discutons de votre projet SEO (15 minutes offertes)</p>
             </div>
-            <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-                    <div>
+            <div style="background: #f9fafb; padding: 32px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <div class="contact-grid">
+                    <div class="contact-card">
                         <h3 class="text-xl font-bold text-accent mb-4">📞 Appelez-moi</h3>
-                        <a href="tel:5142416488" class="text-2xl font-bold text-primary hover:text-green-700">514 241 6488</a>
-                        <p class="text-gray-600 mt-2">Lun-Ven 9h-17h</p>
+                        <a href="tel:5142416488" class="contact-link">514 241 6488</a>
+                        <p class="text-gray-600" style="margin-top: 8px;">Lun-Ven 9h-17h</p>
                     </div>
-                    <div>
+                    <div class="contact-card">
                         <h3 class="text-xl font-bold text-accent mb-4">📧 Écrivez-moi</h3>
-                        <a href="mailto:info@nbstrategiesweb.ca" class="text-xl font-bold text-primary hover:text-green-700">info@nbstrategiesweb.ca</a>
-                        <p class="text-gray-600 mt-2">Réponse sous 24h</p>
+                        <a href="mailto:info@nbstrategiesweb.ca" class="contact-link">info@nbstrategiesweb.ca</a>
+                        <p class="text-gray-600" style="margin-top: 8px;">Réponse sous 24h</p>
                     </div>
                 </div>
-                <div class="text-center mt-8">
-                    <p class="text-lg text-gray-700 mb-4">💡 <strong>Consultation gratuite de 15 minutes</strong></p>
+                <div class="text-center" style="margin-top: 32px;">
+                    <p style="font-size: 1.125rem; margin-bottom: 16px;">💡 <strong>Consultation gratuite de 15 minutes</strong></p>
                     <p class="text-gray-600">Analysons ensemble votre situation SEO actuelle</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-accent text-white py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
+    <footer>
+        <div class="container py-20">
+            <div class="footer-grid">
+                <div class="footer-section">
                     <h3 class="text-xl font-bold mb-4">NB Stratégies Web</h3>
-                    <p class="text-gray-300">Consultante SEO au Québec spécialisée en référencement naturel.</p>
+                    <p style="color: #d1d5db;">Consultante SEO au Québec spécialisée en référencement naturel.</p>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-300">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
                         <li>Audit SEO</li>
                         <li>Fiches Produits</li>
                         <li>Rédaction de Contenu</li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-gray-300">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
                         <li>📞 514 241 6488</li>
                         <li>📧 info@nbstrategiesweb.ca</li>
                         <li>📍 Québec, Canada</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+            <div style="border-top: 1px solid #6b7280; margin-top: 32px; padding-top: 32px; text-center; color: #d1d5db;">
                 <p>&copy; 2025 NB Stratégies Web. Tous droits réservés.</p>
             </div>
         </div>
@@ -188,7 +219,9 @@
 </html>
 ```
 
-5. **Scrollez en bas et cliquez "Commit changes"**
+6. **Cliquez "Commit changes"**
 
-**Dites-moi quand c'est fait !** 📝
+**Cette version aura un design professionnel qui fonctionne sur GitHub Pages !** 🎨
+
+Faites-moi savoir quand c'est fait !
 Observation: Question has been sent to the user. Waiting for response.
